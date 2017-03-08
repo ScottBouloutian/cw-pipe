@@ -1,0 +1,24 @@
+{
+  "name": "cw-pipe",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ScottBouloutian/cw-pipe.git"
+  },
+  "author": "Scott Bouloutian",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ScottBouloutian/cw-pipe/issues"
+  },
+  "homepage": "https://github.com/ScottBouloutian/cw-pipe#readme",
+  "dependencies": {
+    "aws-sdk": "^2.24.0",
+    "bluebird": "^3.5.0",
+    "highland": "^2.10.2"
+  }
+}
