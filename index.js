@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 const aws = require('aws-sdk');
 const highland = require('highland');
 const Promise = require('bluebird');
@@ -21,7 +23,6 @@ module.exports = () => (
             message,
             timestamp: Date.now(),
         })).batch(batchSize).each(logEvents => {
-            console.log(`Writing log events`);
             promise.then(token => (
                 putLogEvents({
                     logEvents,
@@ -31,5 +32,5 @@ module.exports = () => (
                 })
             )).then(({ nextSequenceToken }) => nextSequenceToken);
         });
-    });
+    })
 );
