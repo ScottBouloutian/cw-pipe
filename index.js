@@ -9,7 +9,8 @@ const putLogEvents = Promise.promisify(logs.putLogEvents, { context: logs });
 const describeLogStreams = Promise.promisify(logs.describeLogStreams, { context: logs });
 
 const groupName = process.env.LOG_GROUP_NAME;
-const streamName = process.argv[2];
+const streamName = process.env.LOG_STREAM_NAME;
+const prefix = process.argv[2];
 const inputStream = highland(process.stdin);
 const batchSize = 10;
 
@@ -20,7 +21,7 @@ module.exports = () => (
     }).then(token => {
         const promise = Promise.resolve(token);
         inputStream.split().filter(message => (message.length > 0)).map(message => ({
-            message,
+            message: `${prefix}: ${message}`,
             timestamp: Date.now(),
         })).batch(batchSize).each(logEvents => {
             promise.then(token => (
