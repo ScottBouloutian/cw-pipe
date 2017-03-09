@@ -13,7 +13,7 @@ When piping to CloudWatch the string passed to `cw-pipe` will be prefixed to eac
 ```
 export LOG_GROUP_NAME="my-log-group"
 export LOG_STREAM_NAME="my-log-stream"
-ls | cw-pipe "stdout"
+ls | cw-pipe stdout
 ```
 If you also want to pipe `stderr` the best solution I could find is to pipe to `stdout`, switch the file descriptors, and then pipe to `stderr`
 ```
