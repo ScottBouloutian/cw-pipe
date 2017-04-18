@@ -13,7 +13,7 @@
     "url": "git+https://github.com/ScottBouloutian/cw-pipe.git"
   },
   "author": "Scott Bouloutian",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/ScottBouloutian/cw-pipe/issues"
   },
